@@ -1,7 +1,12 @@
 import { useTotalPrice } from "../../../../context/FullPriceContext";
 
-export const BaggageCard = () => {
+export const BaggageCard = ({ setCountProduct }) => {
   const { cartItems, removeItemFromCart } = useTotalPrice();
+
+  const handleRemove = (productId) => {
+    removeItemFromCart(productId);
+    setCountProduct(0);
+  };
   return (
     <div className="justify-center">
       {!cartItems.length == 0 ? (
@@ -17,10 +22,10 @@ export const BaggageCard = () => {
                 className="rounded-sm h-18 w-25 me-5"
               />
               <div>
-                <h1 class="font-semibold text-3xl text-gray-800 mb-0">
+                <h1 class="font-bold text-2xl text-gray-600 mb-0">
                   {product.name}
                 </h1>
-                <p className="font-bold text-gray-500">
+                <p className="font-bold text-gray-400">
                   ${product.price * product.quantity}
                 </p>
               </div>
@@ -29,7 +34,7 @@ export const BaggageCard = () => {
             <button
               type="button"
               className="font-medium rounded-lg text-sm px-5 py-2 text-center focus:outline-none transition-colors text-orange-300 hover:text-white border border-orange-300 hover:bg-orange-400 hover:border-orange-400"
-              onClick={() => removeItemFromCart(product.id)}
+              onClick={() => handleRemove(product.id)}
             >
               Clear
             </button>

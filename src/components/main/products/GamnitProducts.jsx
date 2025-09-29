@@ -7,6 +7,8 @@ export function GamnitProducts({
   searchTerm,
   isOpenBaggage,
   setIsOpenBaggage,
+  countProduct,
+  setCountProduct,
 }) {
   const debouncedSearch = useDebounce(searchTerm, 400);
   const products = GAMNIT.filter((product) =>
@@ -19,17 +21,20 @@ export function GamnitProducts({
           onClose={() => {
             setIsOpenBaggage(false);
           }}
+          setCountProduct={setCountProduct}
         />
       )}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {products.length ? (
           products.map((product) => (
             <ProductCard
-              key={product.id}
+              id={product.id}
               image={product.pic}
               name={product.name}
               price={product.price}
               description={product.description}
+              countProduct={countProduct}
+              setCountProduct={setCountProduct}
             />
           ))
         ) : (

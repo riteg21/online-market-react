@@ -7,6 +7,7 @@ import { GamnitProducts } from "./main/products/GamnitProducts";
 export function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [isOpenBaggage, setIsOpenBaggage] = useState(false);
+  const [countProduct, setCountProduct] = useState(0);
 
   return (
     <div>
@@ -18,6 +19,8 @@ export function App() {
       <GamnitProducts
         searchTerm={searchTerm}
         isOpenBaggage={isOpenBaggage}
+        countProduct={countProduct}
+        setCountProduct={setCountProduct}
         setIsOpenBaggage={setIsOpenBaggage}
       />
       <Footer />
