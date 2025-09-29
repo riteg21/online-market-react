@@ -7,18 +7,26 @@ export function ProductCard({ image, name, price, description, id }) {
 
   const { addToTotal, updateTotal, removeFromTotal } = useTotalPrice();
 
+  const product = {
+    id,
+    image,
+    name,
+    price,
+    description,
+  };
+
   const handleIncrement = () => {
     const newCount = countProduct + 1;
     const newTotal = newCount * price;
     const oldTotal = countProduct * price;
 
     if (countProduct === 0) {
-      addToTotal(price);
+      addToTotal(price, product);
     } else {
-      updateTotal(oldTotal, newTotal);
+      updateTotal(oldTotal, newTotal, product, newCount);
     }
 
-    return setCountProduct(newCount);
+    setCountProduct(newCount);
   };
   const handleDecrement = () => {
     if (countProduct > 0) {
@@ -26,15 +34,15 @@ export function ProductCard({ image, name, price, description, id }) {
       const oldTotal = countProduct * price;
 
       if (newCount === 0) {
-        removeFromTotal(oldTotal);
+        removeFromTotal(oldTotal, product);
       } else {
         const newTotal = newCount * price;
-        updateTotal(oldTotal, newTotal);
+        updateTotal(oldTotal, newTotal, product, newCount);
       }
-      return setCountProduct(newCount);
+      setCountProduct(newCount);
     }
   };
-  console.log(countProduct);
+
   return (
     <div
       className="max-w-sm bg-white  rounded-lg shadow-md m-6 shadow-orange-100"

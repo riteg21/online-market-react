@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useTotalPrice } from "../../../../context/FullPriceContext";
+import { BaggageCard } from "./BaggageCard";
 
 export const ModalBaggage = ({ onClose }) => {
-  const { totalPrice } = useTotalPrice();
+  const { totalPrice, cartItems } = useTotalPrice();
+  console.log(cartItems);
   useEffect(() => {
     const handleEsc = (e) => {
       if (e.key == "Escape") onClose();
@@ -40,10 +42,12 @@ export const ModalBaggage = ({ onClose }) => {
             />
           </svg>
         </button>
-        <h1 className="text-3xl font-black text-gray-800 flex justify-center">
+        <h1 className="text-3xl font-black text-orange-500 flex justify-center">
           Baggage
         </h1>
-
+        <div className="mb-10">
+          <BaggageCard />
+        </div>
         <h1 className="text-xl font-black text-orange-400 ">{`Total Price: $${totalPrice}`}</h1>
       </div>
     </div>,
