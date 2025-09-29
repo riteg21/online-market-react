@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTotalPrice } from "../../../context/FullPriceContext";
 import { ButtonOfCount } from "./ButtonOfCount";
 
 export function ProductCard({ image, name, price, description, id }) {
   const [countProduct, setCountProduct] = useState(0);
 
-  const { addToTotal, updateTotal, removeFromTotal } = useTotalPrice();
+  const { addToTotal, updateTotal, removeFromTotal, cartItems } =
+    useTotalPrice();
+
+  useEffect(() => {
+    const cartItem = cartItems.find((item) => item.id === id);
+    if (!cartItem) {
+      setCountProduct(0);
+    }
+  }, [cartItems, id]);
 
   const product = {
     id,

@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import { useTotalPrice } from "../../../../context/FullPriceContext";
 import { BaggageCard } from "./BaggageCard";
 
-export const ModalBaggage = ({ onClose, setCountProduct }) => {
+export const ModalBaggage = ({ onClose }) => {
   const { totalPrice, cartItems } = useTotalPrice();
 
   console.log(cartItems);
@@ -47,7 +47,7 @@ export const ModalBaggage = ({ onClose, setCountProduct }) => {
           Baggage
         </h1>
         <div className="mb-10">
-          <BaggageCard setCountProduct={setCountProduct} />
+          <BaggageCard />
         </div>
         <h1 className="text-xl font-black text-orange-400 ">{`Total Price: $${totalPrice}`}</h1>
       </div>
