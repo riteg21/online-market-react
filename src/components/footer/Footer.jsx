@@ -1,7 +1,7 @@
-export function Footer() {
+export default function Footer() {
   return (
     <div>
-      <footer className=" p-4 bg-white md:p-8 lg:p-10 text-orange-400">
+      <footer className=" p-4 bg-orange-50 md:p-8 lg:p-10 text-orange-400">
         <div className="mx-auto max-w-screen-xl text-center">
           <h1 className="mb-4 text-3xl font-bold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-2xl ">
             The comfort of buying product{" "}
@@ -16,13 +16,19 @@ export function Footer() {
             </li>
 
             <li>
-              <a href="#" className="mr-4 hover:underline md:mr-6">
-                Blog
+              <a
+                href="https://github.com/riteg21"
+                className="mr-4 hover:underline md:mr-6"
+              >
+                GitHub
               </a>
             </li>
 
             <li>
-              <a href="#" className="mr-4 hover:underline md:mr-6">
+              <a
+                href="https://www.reddit.com/user/Smart_Consequence878/"
+                className="mr-4 hover:underline md:mr-6"
+              >
                 Contact
               </a>
             </li>

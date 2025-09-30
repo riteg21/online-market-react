@@ -3,7 +3,7 @@ import { ProductCard } from "./ProductCard";
 import { useDebounce } from "../../../hooks/useDebounce";
 import { ModalBaggage } from "./modal/ModalBaggage";
 
-export function GamnitProducts({
+export default function GamnitProducts({
   searchTerm,
   isOpenBaggage,
   setIsOpenBaggage,

@@ -1,26 +1,48 @@
-import { useState } from "react";
-import Header from "./header/Header";
-import { Footer } from "./footer/Footer";
+import { useState, Suspense, lazy } from "react";
+import { Loader } from "./loader/Loader";
+import { LoginModal } from "./main/products/modal/LoginModal";
+const Header = lazy(
+  () =>
+    new Promise((resolve) =>
+      setTimeout(() => resolve(import("./header/Header")), 5000)
+    )
+);
+const Footer = lazy(
+  () =>
+    new Promise((resolve) =>
+      setTimeout(() => resolve(import("./footer/Footer")), 5000)
+    )
+);
 
-import { GamnitProducts } from "./main/products/GamnitProducts";
+const GamnitProducts = lazy(
+  () =>
+    new Promise((resolve) =>
+      setTimeout(() => resolve(import("./main/products/GamnitProducts")), 5000)
+    )
+);
 
 export function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [isOpenBaggage, setIsOpenBaggage] = useState(false);
+  const [isOpenLogIn, setIsOpenLogIn] = useState(false);
 
   return (
     <div>
-      <Header
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-        setIsOpenBaggage={setIsOpenBaggage}
-      />
-      <GamnitProducts
-        searchTerm={searchTerm}
-        isOpenBaggage={isOpenBaggage}
-        setIsOpenBaggage={setIsOpenBaggage}
-      />
-      <Footer />
+      {isOpenLogIn && <LoginModal onClose={() => setIsOpenLogIn(false)} />}
+      <Suspense fallback={<Loader />}>
+        <Header
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          setIsOpenBaggage={setIsOpenBaggage}
+          setIsOpenLogIn={setIsOpenLogIn}
+        />
+        <GamnitProducts
+          searchTerm={searchTerm}
+          isOpenBaggage={isOpenBaggage}
+          setIsOpenBaggage={setIsOpenBaggage}
+        />
+        <Footer />
+      </Suspense>
     </div>
   );
 }

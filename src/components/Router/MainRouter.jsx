@@ -1,3 +1,4 @@
+import { lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Layout } from "./Layout";
 import { App } from "../App";

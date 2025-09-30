@@ -53,10 +53,10 @@ export function ProductCard({ image, name, price, description, id }) {
 
   return (
     <div
-      className="max-w-sm bg-white  rounded-lg shadow-md m-6 shadow-orange-100"
+      className="max-w-sm bg-white/5 rounded-lg shadow-lg m-6 shadow-orange-100"
       key={id}
     >
-      <img className="rounded-t-lg w-auto h-50" src={image} alt="" />
+      <img className="rounded-2xl w-auto h-50 p-1" src={image} alt="" />
 
       <div className="p-5">
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-800 ">
