@@ -1,9 +1,8 @@
-import { useEffect, lazy, Suspense } from "react";
+import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useTotalPrice } from "../../../../context/FullPriceContext";
 import { BaggageCard } from "./BaggageCard";
 import { Link } from "react-router-dom";
-import { Loader } from "../../../loader/Loader";
 
 export const ModalBaggage = ({ onClose }) => {
   const { totalPrice, cartItems } = useTotalPrice();
@@ -52,14 +51,12 @@ export const ModalBaggage = ({ onClose }) => {
         </div>
         <div className="flex justify-between">
           {cartItems.length > 0 && (
-            <Suspense fallback={<Loader />}>
-              <Link
-                to={"/404"}
-                className="text-white bg-orange-400 hover:bg-orange-500 focus:ring-1 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-5 shadow-md shadow-orange-200"
-              >
-                Buy
-              </Link>
-            </Suspense>
+            <Link
+              to={"/please-sign"}
+              className="text-white bg-orange-400 hover:bg-orange-500 focus:ring-1 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-5 shadow-md shadow-orange-200"
+            >
+              Buy
+            </Link>
           )}
           {cartItems.length > 0 && (
             <h1 className="text-2xl font-bold text-orange-500 ">{`Total Price: $${totalPrice}`}</h1>
