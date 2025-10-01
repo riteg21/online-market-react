@@ -31,7 +31,7 @@ const Header = ({
             type="search"
             id="floating_outlined"
             value={searchTerm}
-            className="block px-2.5 pb-2.5 pt-4 w-2xl text-sm text-orange-300 bg-orange-50 rounded-lg border-1 border-orange-200 appearance-none   focus:outline-none focus:ring-0 focus:border-orange-400 peer shadow-md shadow-orange-100"
+            className="block px-2.5 pb-3 pt-4 w-2xl text-sm text-orange-300 bg-orange-50 rounded-lg border-1 border-orange-200 appearance-none   focus:outline-none focus:ring-0 focus:border-orange-400 peer shadow-md shadow-orange-100"
             placeholder=" "
           />
           <label

@@ -15,7 +15,7 @@ export default function GamnitProducts({
     product.name.toLowerCase().includes(debouncedSearch.toLowerCase())
   );
   return (
-    <div className="flex justify-center mt-15 mb-15">
+    <div className="flex justify-center mt-15 mb-15 ">
       {isOpenBaggage && (
         <ModalBaggage
           onClose={() => {
@@ -24,7 +24,7 @@ export default function GamnitProducts({
           setCountProduct={setCountProduct}
         />
       )}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
         {products.length ? (
           products.map((product) => (
             <ProductCard
@@ -38,11 +38,11 @@ export default function GamnitProducts({
             />
           ))
         ) : (
-          <div className="col-span-full flex flex-col items-center justify-center py-8 mb-21">
+          <div className="col-span-full flex flex-col items-center justify-center py-8 mb-10">
             <img
               src="/not-found2.svg"
               alt="No products found"
-              className="mb-20"
+              className=" w-130 h-auto"
             />
             <h1 className="mb-14 text-2xl font-extrabold leading-none tracking-tight text-black/70 md:text-5xl lg:text-6xl ">
               Products not found

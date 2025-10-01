@@ -1,7 +1,7 @@
-import { lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Layout } from "./Layout";
 import { App } from "../App";
+import { BackendError } from "../payment/404/404";
 
 export function MainRouter() {
   return (
@@ -9,6 +9,7 @@ export function MainRouter() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<App />} />
+          <Route path="/404" element={<BackendError />} />
         </Route>
       </Routes>
     </Router>
