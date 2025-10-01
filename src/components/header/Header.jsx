@@ -45,7 +45,7 @@ const Header = ({
           <div className="relative">
             <button
               type="button"
-              className="text-white bg-orange-400 hover:bg-orange-500 focus:ring-1 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-5 shadow-md shadow-orange-200"
+              className="text-white bg-orange-400 hover:bg-orange-500 focus:ring-1 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-5 shadow-md shadow-orange-200 "
               onClick={openBaggage}
             >
               <svg
@@ -66,7 +66,7 @@ const Header = ({
             className="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-1 focus:outline-none  font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center shadow-md shadow-gray-300 "
             onClick={openLogIn}
           >
-            Log-In
+            Sign In
           </button>
         </div>
       </header>

@@ -4,20 +4,20 @@ import { LoginModal } from "./main/products/modal/LoginModal";
 const Header = lazy(
   () =>
     new Promise((resolve) =>
-      setTimeout(() => resolve(import("./header/Header")), 4000)
+      setTimeout(() => resolve(import("./header/Header")), 2000)
     )
 );
 const Footer = lazy(
   () =>
     new Promise((resolve) =>
-      setTimeout(() => resolve(import("./footer/Footer")), 4000)
+      setTimeout(() => resolve(import("./footer/Footer")), 2000)
     )
 );
 
 const GamnitProducts = lazy(
   () =>
     new Promise((resolve) =>
-      setTimeout(() => resolve(import("./main/products/GamnitProducts")), 4000)
+      setTimeout(() => resolve(import("./main/products/GamnitProducts")), 2000)
     )
 );
 
