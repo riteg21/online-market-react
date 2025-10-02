@@ -17,3 +17,4 @@ export function MainRouter() {
     </Router>
   );
 }
+// продолжить надо с фильтрации

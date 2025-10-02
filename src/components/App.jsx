@@ -1,6 +1,14 @@
 import { useState, Suspense, lazy } from "react";
 import { Loader } from "./loader/Loader";
 import { LoginModal } from "./main/products/modal/LoginModal";
+import { Filter } from "./main/filter/Filter";
+
+// const Filter = lazy(
+//   () =>
+//     new Promise((resolve) =>
+//       setTimeout(() => resolve(import("./main/filter/Filter")), 2000)
+//     )
+// );
 const Header = lazy(
   () =>
     new Promise((resolve) =>
@@ -36,11 +44,16 @@ export function App() {
           setIsOpenBaggage={setIsOpenBaggage}
           setIsOpenLogIn={setIsOpenLogIn}
         />
-        <GamnitProducts
-          searchTerm={searchTerm}
-          isOpenBaggage={isOpenBaggage}
-          setIsOpenBaggage={setIsOpenBaggage}
-        />
+
+        <div className="flex justify-between">
+          <Filter />
+          <GamnitProducts
+            searchTerm={searchTerm}
+            isOpenBaggage={isOpenBaggage}
+            setIsOpenBaggage={setIsOpenBaggage}
+          />
+        </div>
+
         <Footer />
       </Suspense>
     </div>
