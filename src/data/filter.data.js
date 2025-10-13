@@ -1,9 +1,5 @@
 export const FilterData = [
   {
-    id: 11,
-    category: "All Products",
-  },
-  {
     id: 22,
     category: "Dairy",
   },

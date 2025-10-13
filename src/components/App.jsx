@@ -3,12 +3,6 @@ import { Loader } from "./loader/Loader";
 import { LoginModal } from "./main/products/modal/LoginModal";
 import { Filter } from "./main/filter/Filter";
 
-// const Filter = lazy(
-//   () =>
-//     new Promise((resolve) =>
-//       setTimeout(() => resolve(import("./main/filter/Filter")), 2000)
-//     )
-// );
 const Header = lazy(
   () =>
     new Promise((resolve) =>
@@ -33,7 +27,9 @@ export function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [isOpenBaggage, setIsOpenBaggage] = useState(false);
   const [isOpenLogIn, setIsOpenLogIn] = useState(false);
+  const [filterCategory, setFilterCategory] = useState("");
 
+  console.log(filterCategory);
   return (
     <div>
       {isOpenLogIn && <LoginModal onClose={() => setIsOpenLogIn(false)} />}
@@ -45,9 +41,10 @@ export function App() {
           setIsOpenLogIn={setIsOpenLogIn}
         />
 
-        <div className="flex justify-between">
-          <Filter />
+        <div className="flex flex-col items-center">
+          <Filter setFilterCategory={setFilterCategory} />
           <GamnitProducts
+            filterCategory={filterCategory}
             searchTerm={searchTerm}
             isOpenBaggage={isOpenBaggage}
             setIsOpenBaggage={setIsOpenBaggage}

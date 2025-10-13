@@ -2,8 +2,10 @@ import { GAMNIT } from "../../../data/products.data";
 import { ProductCard } from "./ProductCard";
 import { useDebounce } from "../../../hooks/useDebounce";
 import { ModalBaggage } from "./modal/ModalBaggage";
+import { useMemo } from "react";
 
 export default function GamnitProducts({
+  filterCategory,
   searchTerm,
   isOpenBaggage,
   setIsOpenBaggage,
@@ -14,6 +16,15 @@ export default function GamnitProducts({
   const products = GAMNIT.filter((product) =>
     product.name.toLowerCase().includes(debouncedSearch.toLowerCase())
   );
+
+  const filterProducts = useMemo(() => {
+    if (!filterCategory) {
+      return products;
+    }
+
+    return products.filter((product) => product.category === filterCategory);
+  }, [products, filterCategory]);
+  console.log(filterProducts);
   return (
     <div className="flex justify-center mt-15 mb-15 ">
       {isOpenBaggage && (
@@ -24,9 +35,9 @@ export default function GamnitProducts({
           setCountProduct={setCountProduct}
         />
       )}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
-        {products.length ? (
-          products.map((product) => (
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2">
+        {filterProducts.length ? (
+          filterProducts.map((product) => (
             <ProductCard
               id={product.id}
               image={product.pic}
