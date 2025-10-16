@@ -41,7 +41,7 @@ export function App() {
           setIsOpenLogIn={setIsOpenLogIn}
         />
 
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col ">
           <Filter setFilterCategory={setFilterCategory} />
           <GamnitProducts
             filterCategory={filterCategory}
