@@ -35,10 +35,11 @@ export default function GamnitProducts({
           setCountProduct={setCountProduct}
         />
       )}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2 mt-15">
         {filterProducts.length ? (
           filterProducts.map((product) => (
             <ProductCard
+              key={product.id}
               id={product.id}
               image={product.pic}
               name={product.name}

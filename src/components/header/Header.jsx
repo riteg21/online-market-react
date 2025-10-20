@@ -1,5 +1,8 @@
 import { useCallback, useState } from "react";
 import { useTotalPrice } from "../../context/FullPriceContext";
+import { useAuth } from "../../context/AuthUserContext";
+import { button } from "motion/react-client";
+import { Link } from "react-router-dom";
 
 const Header = ({
   searchTerm,
@@ -8,6 +11,7 @@ const Header = ({
   setIsOpenLogIn,
 }) => {
   const { totalPrice } = useTotalPrice();
+  const { user, loginType } = useAuth();
   const openBaggage = useCallback(() => {
     setIsOpenBaggage(true);
   });
@@ -60,14 +64,19 @@ const Header = ({
               {!totalPrice == 0 ? `$${totalPrice}` : "Buy Now"}
             </button>
           </div>
-
-          <button
-            type="button"
-            className="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-1 focus:outline-none  font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center shadow-md shadow-gray-300 "
-            onClick={openLogIn}
-          >
-            Sign In
-          </button>
+          {loginType ? (
+            <Link to={"/profile"}>
+              <img src={user.img} alt="User-Photo" className="w-auto h-10" />
+            </Link>
+          ) : (
+            <button
+              type="button"
+              className="text-white bg-[#24292F] hover:bg-[#24292F]/90 focus:ring-1 focus:outline-none  font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center shadow-md shadow-gray-300 "
+              onClick={openLogIn}
+            >
+              Sign In
+            </button>
+          )}
         </div>
       </header>
     </div>

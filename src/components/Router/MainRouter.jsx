@@ -3,6 +3,8 @@ import { Layout } from "./Layout";
 import { App } from "../App";
 import { BackendError } from "../payment/404/404";
 import { ErrorNoRegister } from "../ErrorNoRegister/ErrorNoRegister";
+import { UserProfile } from "../profileUser/UserProfile";
+import { Order } from "../payment/Order";
 
 export function MainRouter() {
   return (
@@ -12,6 +14,8 @@ export function MainRouter() {
           <Route path="/" element={<App />} />
           <Route path="/404" element={<BackendError />} />
           <Route path="/please-sign" element={<ErrorNoRegister />} />
+          <Route path="/profile" element={<UserProfile />} />
+          <Route path="/order" element={<Order />} />
         </Route>
       </Routes>
     </Router>

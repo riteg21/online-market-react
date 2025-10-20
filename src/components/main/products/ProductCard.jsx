@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useTotalPrice } from "../../../context/FullPriceContext";
 import { ButtonOfCount } from "./ButtonOfCount";
+import TiltedCard from "../../motion/motionProducts/TiltedCard";
+import { div } from "motion/react-client";
 
 export function ProductCard({ image, name, price, description, id }) {
   const [countProduct, setCountProduct] = useState(0);
@@ -52,26 +54,39 @@ export function ProductCard({ image, name, price, description, id }) {
   };
 
   return (
-    <div
-      className="max-w-sm bg-white/5 rounded-lg shadow-lg m-6 shadow-orange-100"
-      key={id}
-    >
-      <img className="rounded-2xl w-auto h-50 p-1" src={image} alt="" />
-
-      <div className="p-5">
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-800 ">
-          {name}
-        </h5>
-        <p className="mb-3 font-normal text-gray-400 ">{description}</p>
-        <span className="text-3xl font-extrabold text-orange-300">
-          ${price}
-        </span>
-        <ButtonOfCount
-          countProduct={countProduct}
-          handleDecrement={handleDecrement}
-          handleIncrement={handleIncrement}
-        />
-      </div>
+    <div className="p-4">
+      <TiltedCard
+        imageSrc={image}
+        containerHeight="300px"
+        containerWidth="300px"
+        imageHeight="300px"
+        imageWidth="300px"
+        rotateAmplitude={12}
+        scaleOnHover={1.1}
+        showMobileWarning={false}
+        showTooltip={true}
+        displayOverlayContent={true}
+        overlayContent={
+          <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-2xl m-4 border border-white/20">
+            <div className="p-6">
+              <h5 className="mb-3 text-2xl font-bold text-gray-900">{name}</h5>
+              <p className="mb-4 text-gray-600 leading-relaxed">
+                {description}
+              </p>
+              <div className="flex items-center justify-between mb-4">
+                <span className="text-3xl font-bold text-orange-500">
+                  ${price}
+                </span>
+              </div>
+              <ButtonOfCount
+                countProduct={countProduct}
+                handleDecrement={handleDecrement}
+                handleIncrement={handleIncrement}
+              />
+            </div>
+          </div>
+        }
+      />
     </div>
   );
 }

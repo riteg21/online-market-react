@@ -10,7 +10,6 @@ export function TotalPriceProvider({ children }) {
     setTotalPrice((prev) => prev + price);
 
     setCartItems((prevItems) => {
-      //prevItems - это типа текущий товар
       const existingItemIndex = prevItems.findIndex(
         (item) => item.id === product.id
       );
@@ -18,7 +17,7 @@ export function TotalPriceProvider({ children }) {
       if (existingItemIndex >= 0) {
         const updatedItems = [...prevItems];
         updatedItems[existingItemIndex] = {
-          ...updatedItems[existingItemIndex], //обращение к найденому товару в копии массива - новый массив updatedItems сделал чтобы не мутировать главый
+          ...updatedItems[existingItemIndex],
           quantity: updatedItems[existingItemIndex].quantity + 1,
         };
         return updatedItems;

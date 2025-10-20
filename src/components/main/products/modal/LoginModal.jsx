@@ -1,16 +1,11 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../../../context/AuthUserContext";
 
 export const LoginModal = ({ onClose }) => {
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const userData = [];
-  userData.push({
-    email: email,
-    password: password,
-  });
-  console.log(userData);
+  const [email, setEmail] = useState("");
+  const { loginHandler } = useAuth();
 
   useEffect(() => {
     const handleEsc = (e) => {
@@ -53,7 +48,7 @@ export const LoginModal = ({ onClose }) => {
         </h1>
         <div className="p-4 md:p-5">
           <div className="space-y-1 mb-10">
-            <div className="relative">
+            <div className="relative mb-10">
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Email
               </label>
@@ -77,38 +72,13 @@ export const LoginModal = ({ onClose }) => {
                 />
               </div>
             </div>
-            <div className="relative">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Password
-              </label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <svg
-                    className="h-5 w-5 text-gray-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                    />
-                  </svg>
-                </div>
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="••••••••"
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-400 focus:border-transparent transition-all duration-200 outline-none"
-                />
-              </div>
-            </div>
           </div>
-          <button className="w-full bg-gradient-to-r from-orange-200 to-red-400 hover:from-orange-400 hover:to-red-500 text-white font-semibold py-3 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl mb-10">
-            Return
+          <button
+            className="w-full bg-gradient-to-r from-orange-200 to-red-400 hover:from-orange-400 hover:to-red-500 text-white font-semibold py-3 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl mb-10"
+            type="submit"
+            onClick={() => (loginHandler(email), onClose())}
+          >
+            Go Shopping
           </button>
           <Link
             to={"/404"}

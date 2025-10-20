@@ -1,6 +1,6 @@
 import { useTotalPrice } from "../../../../context/FullPriceContext";
 
-export const BaggageCard = ({}) => {
+export const BaggageCard = () => {
   const { cartItems, removeItemFromCart } = useTotalPrice();
 
   return (
