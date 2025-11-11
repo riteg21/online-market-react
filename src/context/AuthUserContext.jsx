@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   const [loginType, setLoginType] = useState(false);
   const user = {
     email: "admin@gmail.com",
-    img: "/user-default.svg",
+    img: "/user.svg",
   };
 
   const loginHandler = (userEmail) => {
@@ -18,10 +18,17 @@ export const AuthProvider = ({ children }) => {
       setLoginType(true);
     }
   };
+  useEffect(() => {
+    localStorage.setItem("loginType", loginType);
+  }, [loginType]);
+
+  const loginTypeFromLS = localStorage.getItem("loginType");
+
   const value = {
     user,
     loginHandler,
     loginType,
+    loginTypeFromLS,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

@@ -26,7 +26,7 @@ export default function GamnitProducts({
   }, [products, filterCategory]);
   console.log(filterProducts);
   return (
-    <div className="flex justify-center mt-8 mb-15 ">
+    <div className="flex justify-center mt-8 mb-10 ">
       {isOpenBaggage && (
         <ModalBaggage
           onClose={() => {
@@ -50,7 +50,7 @@ export default function GamnitProducts({
             />
           ))
         ) : (
-          <div className="col-span-full flex flex-col items-center justify-center py-8 mb-10">
+          <div className="col-span-full flex flex-col items-center justify-center mb-10">
             <img
               src="/not-found2.svg"
               alt="No products found"

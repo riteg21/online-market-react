@@ -5,7 +5,7 @@ export const GAMNIT = [
     name: "Fresh Baguette",
     price: 2,
     description: "Crispy French baguette",
-    pic: "/bread.jpg",
+    pic: "/FreshBaguette.jpeg",
     category: "Backery's",
   },
   {
@@ -13,7 +13,7 @@ export const GAMNIT = [
     name: "Whole Wheat Bread",
     price: 3,
     description: "Healthy whole wheat bread",
-    pic: "/bread.jpg",
+    pic: "/WholeWheatBread.jpeg",
     category: "Backery's",
   },
   {
@@ -21,7 +21,7 @@ export const GAMNIT = [
     name: "Croissant",
     price: 5,
     description: "Buttery French croissant",
-    pic: "/bread.jpg",
+    pic: "/Croissant.jpeg",
     category: "Backery's",
   },
   {
@@ -29,7 +29,7 @@ export const GAMNIT = [
     name: "Cinnamon Roll",
     price: 5,
     description: "Sweet cinnamon pastry",
-    pic: "/bread.jpg",
+    pic: "/CinnamonRoll.jpeg",
     category: "Backery's",
   },
 
@@ -39,7 +39,7 @@ export const GAMNIT = [
     name: "Milk",
     price: 2,
     description: "Fresh whole milk 1L",
-    pic: "/bread.jpg",
+    pic: "/Milk.jpeg",
     category: "Dairy",
   },
   {
@@ -47,7 +47,7 @@ export const GAMNIT = [
     name: "Yogurt",
     price: 2,
     description: "Natural Greek yogurt",
-    pic: "/bread.jpg",
+    pic: "/Yogurt.jpeg",
     category: "Dairy",
   },
   {
@@ -55,7 +55,7 @@ export const GAMNIT = [
     name: "Cheese",
     price: 5,
     description: "Gouda cheese 200g",
-    pic: "/bread.jpg",
+    pic: "/Cheese.jpeg",
     category: "Dairy",
   },
   {
@@ -63,7 +63,7 @@ export const GAMNIT = [
     name: "Butter",
     price: 3,
     description: "Salted butter 250g",
-    pic: "/bread.jpg",
+    pic: "/Butter.jpeg",
     category: "Dairy",
   },
   {
@@ -71,7 +71,7 @@ export const GAMNIT = [
     name: "Sour Cream",
     price: 8,
     description: "Fresh sour cream",
-    pic: "/bread.jpg",
+    pic: "/SourCream.jpeg",
     category: "Dairy",
   },
 
@@ -81,7 +81,7 @@ export const GAMNIT = [
     name: "Beef Steak",
     price: 12,
     description: "Premium beef steak",
-    pic: "/bread.jpg",
+    pic: "/BeefSteak.jpeg",
     category: "Buther's",
   },
   {
@@ -89,7 +89,7 @@ export const GAMNIT = [
     name: "Chicken Breast",
     price: 8,
     description: "Boneless chicken breast",
-    pic: "/bread.jpg",
+    pic: "/ChickenBreast.jpeg",
     category: "Buther's",
   },
   {
@@ -97,7 +97,7 @@ export const GAMNIT = [
     name: "Pork Chops",
     price: 10,
     description: "Fresh pork chops",
-    pic: "/bread.jpg",
+    pic: "/PorkChops.jpeg",
     category: "Buther's",
   },
   {
@@ -105,7 +105,7 @@ export const GAMNIT = [
     name: "Bacon",
     price: 6,
     description: "Smoked bacon strips",
-    pic: "/bread.jpg",
+    pic: "/Bacon.jpeg",
     category: "Buther's",
   },
   {
@@ -113,7 +113,7 @@ export const GAMNIT = [
     name: "Sausages",
     price: 7,
     description: "Traditional pork sausages",
-    pic: "/bread.jpg",
+    pic: "/Sausages.jpeg",
     category: "Buther's",
   },
 
@@ -123,7 +123,7 @@ export const GAMNIT = [
     name: "Apples",
     price: 3,
     description: "Fresh red apples 1kg",
-    pic: "/bread.jpg",
+    pic: "/Apples.jpeg",
     category: "Greengrosser's",
   },
   {
@@ -131,7 +131,7 @@ export const GAMNIT = [
     name: "Bananas",
     price: 2,
     description: "Ripe bananas 1kg",
-    pic: "/bread.jpg",
+    pic: "/Bananas.jpeg",
     category: "Greengrosser's",
   },
   {
@@ -139,7 +139,7 @@ export const GAMNIT = [
     name: "Tomatoes",
     price: 4,
     description: "Vine tomatoes 1kg",
-    pic: "/bread.jpg",
+    pic: "/Tomatoes.jpeg",
     category: "Greengrosser's",
   },
   {
@@ -147,7 +147,7 @@ export const GAMNIT = [
     name: "Potatoes",
     price: 5,
     description: "Potatoes 2kg bag",
-    pic: "/bread.jpg",
+    pic: "/Potatoes.jpeg",
     category: "Greengrosser's",
   },
   {
@@ -155,7 +155,7 @@ export const GAMNIT = [
     name: "Carrots",
     price: 5,
     description: "Fresh carrots 1kg",
-    pic: "/bread.jpg",
+    pic: "/Carrots.jpeg",
     category: "Greengrosser's",
   },
 
@@ -165,7 +165,7 @@ export const GAMNIT = [
     name: "Chocolate Bar",
     price: 2,
     description: "Milk chocolate 100g",
-    pic: "/bread.jpg",
+    pic: "/ChocolateBar.jpeg",
     category: "Sweets",
   },
   {
@@ -173,7 +173,7 @@ export const GAMNIT = [
     name: "Cookies",
     price: 5,
     description: "Chocolate chip cookies",
-    pic: "/bread.jpg",
+    pic: "/Cookies.jpeg",
     category: "Sweets",
   },
   {
@@ -181,7 +181,7 @@ export const GAMNIT = [
     name: "Cake",
     price: 15,
     description: "Chocolate cake 500g",
-    pic: "/bread.jpg",
+    pic: "/Cake.jpeg",
     category: "Sweets",
   },
   {
@@ -189,7 +189,7 @@ export const GAMNIT = [
     name: "Ice Cream",
     price: 4,
     description: "Vanilla ice cream 500ml",
-    pic: "/bread.jpg",
+    pic: "/IceCream.jpeg",
     category: "Sweets",
   },
   {
@@ -197,7 +197,7 @@ export const GAMNIT = [
     name: "Candy",
     price: 2,
     description: "Assorted candy pack",
-    pic: "/bread.jpg",
+    pic: "/Candy.jpeg",
     category: "Sweets",
   },
 
@@ -207,7 +207,7 @@ export const GAMNIT = [
     name: "Orange Juice",
     price: 3,
     description: "Fresh orange juice 1L",
-    pic: "/bread.jpg",
+    pic: "/OrangeJuice.jpeg",
     category: "Drinks",
   },
   {
@@ -215,7 +215,7 @@ export const GAMNIT = [
     name: "Cola",
     price: 2,
     description: "Carbonated cola 1.5L",
-    pic: "/bread.jpg",
+    pic: "/Cola.jpeg",
     category: "Drinks",
   },
   {
@@ -223,7 +223,7 @@ export const GAMNIT = [
     name: "Water",
     price: 1,
     description: "Mineral water 1L",
-    pic: "/bread.jpg",
+    pic: "/Water.jpeg",
     category: "Drinks",
   },
   {
@@ -231,7 +231,7 @@ export const GAMNIT = [
     name: "Coffee",
     price: 5,
     description: "Ground coffee 250g",
-    pic: "/bread.jpg",
+    pic: "/Coffee.jpeg",
     category: "Drinks",
   },
   {
@@ -239,7 +239,7 @@ export const GAMNIT = [
     name: "Tea",
     price: 4,
     description: "Black tea bags 100g",
-    pic: "/bread.jpg",
+    pic: "/Tea.jpeg",
     category: "Drinks",
   },
 
@@ -249,7 +249,7 @@ export const GAMNIT = [
     name: "Chips",
     price: 5,
     description: "Potato chips 150g",
-    pic: "/bread.jpg",
+    pic: "/Chips.jpeg",
     category: "Snacks",
   },
   {
@@ -257,7 +257,7 @@ export const GAMNIT = [
     name: "Nuts",
     price: 4,
     description: "Salted peanuts 200g",
-    pic: "/bread.jpg",
+    pic: "/Nuts.jpeg",
     category: "Snacks",
   },
   {
@@ -265,7 +265,7 @@ export const GAMNIT = [
     name: "Popcorn",
     price: 3,
     description: "Microwave popcorn",
-    pic: "/bread.jpg",
+    pic: "/Popcorn.jpeg",
     category: "Snacks",
   },
   {
@@ -273,7 +273,7 @@ export const GAMNIT = [
     name: "Crackers",
     price: 2,
     description: "Salty crackers 200g",
-    pic: "/bread.jpg",
+    pic: "/Crackers.jpeg",
     category: "Snacks",
   },
   {
@@ -281,7 +281,7 @@ export const GAMNIT = [
     name: "Granola Bar",
     price: 8,
     description: "Oats and honey bar",
-    pic: "/bread.jpg",
+    pic: "/GranolaBar.jpeg",
     category: "Snacks",
   },
 ];

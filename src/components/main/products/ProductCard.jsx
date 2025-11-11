@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useTotalPrice } from "../../../context/FullPriceContext";
 import { ButtonOfCount } from "./ButtonOfCount";
 import TiltedCard from "../../motion/motionProducts/TiltedCard";
-import { div } from "motion/react-client";
 
 export function ProductCard({ image, name, price, description, id }) {
   const [countProduct, setCountProduct] = useState(0);
