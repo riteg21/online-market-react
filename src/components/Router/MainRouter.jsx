@@ -17,7 +17,7 @@ export function MainRouter() {
           <Route path="/please-sign" element={<ErrorNoRegister />} />
           <Route path="/profile" element={<UserProfile />} />
           <Route path="/order" element={<Order />} />
-          <Route />
+          <Route path="/pay" element={<Payment />} />
         </Route>
       </Routes>
     </Router>

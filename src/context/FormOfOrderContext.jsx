@@ -17,15 +17,15 @@ export const FormOfOrderProvider = ({ children }) => {
     setUserOrderInfo(v);
   };
 
-  const orderFull = {
-    totalPrice: totalPriceOfOrder,
-    cartItems: cartItemsOfOrder,
-    user: userOrderInfo,
-  };
-
   useEffect(() => {
-    localStorage.setItem("orderFull", orderFull);
-  }, []);
+    const orderFull = {
+      totalPrice: totalPriceOfOrder,
+      cartItems: cartItemsOfOrder,
+      user: userOrderInfo,
+    };
+
+    localStorage.setItem("orderFull", JSON.stringify(orderFull));
+  }, [userOrderInfo, totalPriceOfOrder, cartItemsOfOrder]);
 
   const value = {
     orderInfoHandler,

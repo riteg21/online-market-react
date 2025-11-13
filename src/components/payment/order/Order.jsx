@@ -462,7 +462,7 @@ export const Order = () => {
               </div>
             </div>
 
-            <Link to={"/"}>
+            <Link to={"/pay"}>
               <button
                 className={`w-full mt-6 px-6 py-4 bg-gradient-to-r from-orange-400 to-orange-500 text-white rounded-xl font-bold text-lg hover:from-orange-500 hover:to-orange-600 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-orange-300 focus:ring-offset-2 ${
                   !submit || cartItems.length === 0
