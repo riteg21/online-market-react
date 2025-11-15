@@ -1,8 +1,12 @@
+import { usePay } from "../../../context/PayContext";
 import Card from "./payCard";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export const Payment = () => {
   const [totalPrice, setTotalPrice] = useState();
+
+  const { setPayType, payType } = usePay();
 
   useEffect(() => {
     const orderData = JSON.parse(localStorage.getItem("orderFull") || "{}");
@@ -31,18 +35,20 @@ export const Payment = () => {
               {totalPrice !== null ? `${totalPrice}$` : "—"}
             </span>
           </div>
-
-          <button
-            className="w-full bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white font-semibold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
-            disabled={!totalPrice}
-          >
-            <span className="flex items-center justify-center gap-2">
-              <span>Pay Now</span>
-              {totalPrice && (
-                <span className="text-orange-100">• {totalPrice}$</span>
-              )}
-            </span>
-          </button>
+          <Link to="/">
+            <button
+              className="w-full bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white font-semibold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={!totalPrice}
+              onClick={() => setPayType(true)}
+            >
+              <span className="flex items-center justify-center gap-2">
+                <span>Pay Now</span>
+                {totalPrice && (
+                  <span className="text-orange-100">• {totalPrice}$</span>
+                )}
+              </span>
+            </button>
+          </Link>
         </div>
 
         <div className="text-center text-sm text-gray-500">

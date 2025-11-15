@@ -2,6 +2,8 @@ import { useState, Suspense, lazy } from "react";
 import { Loader } from "./loader/Loader";
 import { LoginModal } from "./main/products/modal/LoginModal";
 import { Filter } from "./main/filter/Filter";
+import { usePay } from "../context/PayContext";
+import { ProgressOfOrder } from "./payment/order/ProgressOfOrder";
 
 const Header = lazy(
   () =>
@@ -29,7 +31,8 @@ export function App() {
   const [isOpenLogIn, setIsOpenLogIn] = useState(false);
   const [filterCategory, setFilterCategory] = useState("");
 
-  console.log(filterCategory);
+  const { payType } = usePay();
+
   return (
     <div>
       {isOpenLogIn && <LoginModal onClose={() => setIsOpenLogIn(false)} />}
@@ -43,6 +46,10 @@ export function App() {
 
         <div className="flex flex-col ">
           <Filter setFilterCategory={setFilterCategory} />
+          <div className="flex mt-10 justify-center">
+            {payType && <ProgressOfOrder />}
+          </div>
+
           <GamnitProducts
             filterCategory={filterCategory}
             searchTerm={searchTerm}

@@ -24,7 +24,7 @@ export const Order = () => {
     handleSubmit,
     watch,
   } = useForm({
-    mode: "onSubmit",
+    mode: "onChange",
     defaultValues: {
       email: user?.email || "",
       phone: "",

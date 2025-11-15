@@ -5,13 +5,16 @@ import { MainRouter } from "./components/Router/MainRouter.jsx";
 import { TotalPriceProvider } from "./context/FullPriceContext.jsx";
 import { AuthProvider } from "./context/AuthUserContext.jsx";
 import { FormOfOrderProvider } from "./context/FormOfOrderContext.jsx";
+import { PayProvider } from "./context/PayContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <TotalPriceProvider>
       <AuthProvider>
         <FormOfOrderProvider>
-          <MainRouter />
+          <PayProvider>
+            <MainRouter />
+          </PayProvider>
         </FormOfOrderProvider>
       </AuthProvider>
     </TotalPriceProvider>
