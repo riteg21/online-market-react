@@ -6,6 +6,7 @@ import { TotalPriceProvider } from "./context/FullPriceContext.jsx";
 import { AuthProvider } from "./context/AuthUserContext.jsx";
 import { FormOfOrderProvider } from "./context/FormOfOrderContext.jsx";
 import { PayProvider } from "./context/PayContext.jsx";
+import { ProfileInfoProvider } from "./context/ProfileInfoContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -13,7 +14,9 @@ createRoot(document.getElementById("root")).render(
       <AuthProvider>
         <FormOfOrderProvider>
           <PayProvider>
-            <MainRouter />
+            <ProfileInfoProvider>
+              <MainRouter />
+            </ProfileInfoProvider>
           </PayProvider>
         </FormOfOrderProvider>
       </AuthProvider>

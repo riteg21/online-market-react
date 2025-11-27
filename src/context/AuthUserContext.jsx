@@ -18,10 +18,10 @@ export const AuthProvider = ({ children }) => {
       setLoginType(true);
     }
   };
+
   useEffect(() => {
     localStorage.setItem("loginType", loginType);
   }, [loginType]);
-
   const loginTypeFromLS = localStorage.getItem("loginType");
 
   const value = {
