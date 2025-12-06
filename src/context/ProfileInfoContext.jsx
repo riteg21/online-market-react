@@ -11,18 +11,51 @@ export function useProfileInfo() {
 }
 
 export const ProfileInfoProvider = ({ children }) => {
-  const [userPersonalInfo, setUserPersonalInfo] = useState([]);
-
-  const userInfoHandler = (data) => {
-    setUserPersonalInfo(data);
-  };
+  const [userPersonalInfo, setUserPersonalInfo] = useState({});
+  const [showProfileInfo, setShowProfileInfo] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem("userInfo", JSON.stringify(userPersonalInfo));
-  }, [userPersonalInfo]);
+    try {
+      const storageUserInfo = localStorage.getItem("userInfo");
+      const storageShowProfileInfo = localStorage.getItem("showProfileInfo");
+
+      if (storageUserInfo) {
+        setUserPersonalInfo(JSON.parse(storageUserInfo));
+      }
+
+      if (storageShowProfileInfo) {
+        const parsedValue = JSON.parse(storageShowProfileInfo);
+        setShowProfileInfo(parsedValue);
+      }
+    } catch (e) {
+      console.error("Failed to parse data from localStorage:", e);
+    } finally {
+      setIsLoaded(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isLoaded && Object.keys(userPersonalInfo).length > 0) {
+      localStorage.setItem("userInfo", JSON.stringify(userPersonalInfo));
+    }
+  }, [userPersonalInfo, isLoaded]);
+
+  useEffect(() => {
+    if (isLoaded) {
+      localStorage.setItem("showProfileInfo", JSON.stringify(showProfileInfo));
+    }
+  }, [showProfileInfo, isLoaded]);
+
+  const userInfoHandler = (data, bool) => {
+    setUserPersonalInfo(data);
+    setShowProfileInfo(bool);
+  };
 
   const value = {
     userInfoHandler,
+    userPersonalInfo,
+    showProfileInfo,
   };
 
   return (

@@ -7,9 +7,7 @@ import { useAuth } from "../../../../context/AuthUserContext";
 
 export const ModalBaggage = ({ onClose }) => {
   const { totalPrice, cartItems } = useTotalPrice();
-  const { loginTypeFromLS } = useAuth();
-
-  const loginType = loginTypeFromLS;
+  const { loginType } = useAuth();
 
   const loginLinkHandler = () => {
     return loginType ? "/order" : "/please-sign";

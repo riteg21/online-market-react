@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Card = () => {
+const Card = ({ cardNumber, cardExpiry, cardCvc, cardHolderName }) => {
   return (
     <StyledWrapper>
       <div className="flip-card">
@@ -72,16 +72,16 @@ const Card = () => {
               MDowMIXeN6gAAAAASUVORK5CYII="
               />
             </svg>
-            <p className="number">9759 2484 5269 6576</p>
+            <p className="number">{cardNumber}</p>
             <p className="valid_thru">VALID THRU</p>
-            <p className="date_8264">1 2 / 2 4</p>
-            <p className="name">SANTALOV ALEKSANDR</p>
+            <p className="date_8264">{cardExpiry}</p>
+            <p className="name uppercase">{cardHolderName}</p>
           </div>
           <div className="flip-card-back">
             <div className="strip" />
             <div className="mstrip" />
             <div className="sstrip">
-              <p className="code">***</p>
+              <p className="code">{cardCvc}</p>
             </div>
           </div>
         </div>

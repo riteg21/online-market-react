@@ -10,7 +10,7 @@ const Header = ({
   setIsOpenLogIn,
 }) => {
   const { totalPrice } = useTotalPrice();
-  const { user, loginTypeFromLS } = useAuth();
+  const { user, loginType } = useAuth();
 
   const openBaggage = useCallback(() => {
     setIsOpenBaggage(true);
@@ -64,7 +64,7 @@ const Header = ({
               {!totalPrice == 0 ? `$${totalPrice}` : "Buy Now"}
             </button>
           </div>
-          {loginTypeFromLS ? (
+          {loginType ? (
             <Link to={"/profile"}>
               <div className="w-14 h-14 rounded-full flex justify-center items-center p-1 bg-orange-200">
                 <img src={user.img} alt="User-Photo" className="w-auto h-12" />
