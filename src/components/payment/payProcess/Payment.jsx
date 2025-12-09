@@ -1,3 +1,4 @@
+import { useTotalPrice } from "../../../context/FullPriceContext";
 import { usePay } from "../../../context/PayContext";
 import Card from "./payCard";
 import { useState, useEffect } from "react";
@@ -5,6 +6,7 @@ import { Link } from "react-router-dom";
 
 export const Payment = () => {
   const [totalPrice, setTotalPrice] = useState();
+  const { clearCart } = useTotalPrice();
 
   const { setPayType, payType } = usePay();
 
@@ -15,6 +17,11 @@ export const Payment = () => {
       setTotalPrice(orderData.totalPrice);
     }
   }, []);
+
+  const payHandler = () => {
+    setPayType(true);
+    clearCart();
+  };
 
   return (
     <div className=" py-2 px-4 flex flex-col items-center justify-center">
@@ -39,7 +46,7 @@ export const Payment = () => {
             <button
               className="w-full bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white font-semibold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={!totalPrice}
-              onClick={() => setPayType(true)}
+              onClick={() => payHandler()}
             >
               <span className="flex items-center justify-center gap-2">
                 <span>Pay Now</span>

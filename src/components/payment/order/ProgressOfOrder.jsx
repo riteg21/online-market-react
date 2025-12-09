@@ -58,13 +58,16 @@ export const ProgressOfOrder = () => {
 
   return (
     <div className="flex justify-between items-center">
-      <div
-        className={`w-12 h-12 rounded-full text-white items-center flex justify-center ${getColor(
-          0
-        )}`}
-      >
-        {renderStepContent(0)}
+      <div className="">
+        <div
+          className={`w-12 h-12 rounded-full text-white items-center flex justify-center ${getColor(
+            0
+          )}`}
+        >
+          {renderStepContent(0)}
+        </div>
       </div>
+
       <div className={`h-1 w-25 rounded-3xl mx-2 ${getColor(0)}`}></div>
 
       <div

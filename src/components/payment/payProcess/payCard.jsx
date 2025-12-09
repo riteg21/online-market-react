@@ -1,6 +1,20 @@
 import styled from "styled-components";
+import { useState, useEffect } from "react";
 
-const Card = ({ cardNumber, cardExpiry, cardCvc, cardHolderName }) => {
+const Card = () => {
+  const [cardInfo, setCardInfo] = useState();
+
+  useEffect(() => {
+    const storageUserInfo = localStorage.getItem("userInfo");
+
+    if (storageUserInfo) {
+      try {
+        setCardInfo(JSON.parse(storageUserInfo));
+      } catch (e) {
+        console.error("Failed to parse userInfo from localStorage:", e);
+      }
+    }
+  }, []);
   return (
     <StyledWrapper>
       <div className="flip-card">
@@ -72,16 +86,18 @@ const Card = ({ cardNumber, cardExpiry, cardCvc, cardHolderName }) => {
               MDowMIXeN6gAAAAASUVORK5CYII="
               />
             </svg>
-            <p className="number">{cardNumber}</p>
+            <p className="number">{cardInfo?.cardNumber}</p>
             <p className="valid_thru">VALID THRU</p>
-            <p className="date_8264">{cardExpiry}</p>
-            <p className="name uppercase">{cardHolderName}</p>
+            <p className="date_8264">{cardInfo?.cardExpiry}</p>
+            <p className="name uppercase">
+              {cardInfo?.name} {cardInfo?.surname}
+            </p>
           </div>
           <div className="flip-card-back">
             <div className="strip" />
             <div className="mstrip" />
             <div className="sstrip">
-              <p className="code">{cardCvc}</p>
+              <p className="code">{cardInfo?.cardCvc}</p>
             </div>
           </div>
         </div>
